@@ -20,7 +20,7 @@
               <label for="nome">Nome:</label> 
              </td>
              <td align="left">
-               <input type="text" name="mome" size="43" maxlength="40">
+               <input type="text" name="nome" size="43" maxlength="40" id="nome">
              </td>
             
          </tr>
@@ -82,7 +82,7 @@
                         <label for="bairro">Bairro:</label>
                     </td>
                     <td aling="left">
-                    <input type="text" name="bairro " id="">
+                    <input type="text" name="bairro" id="">
                     </td> 
                 </tr>
                 <tr>
