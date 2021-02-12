@@ -1,4 +1,5 @@
 <?php 
+include "Sevicos/MensagemDeErro.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -11,6 +12,16 @@
 </head>
 <body>
     <form action="script.php" method="post">
+    <?php
+       $MensagemErro = obterMensagemErro();
+        if(!empty($MensagemErro)){
+            echo $MensagemErro;
+        }
+        $MensagemSucesso = obterMensagemSucesso();
+        if(!empty($MensagemSucesso)){
+            echo $MensagemSucesso;
+        }
+    ?>
     <!-- Dados pessoas -->
         <fieldset>
          <legend> Dados Pessoas </legend>
