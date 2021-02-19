@@ -17,5 +17,6 @@ $cep = $_POST['cep'];
 // para saber oq está sendo enviado pelo post
 // var_dump($_POST); 
 
-MensagemConfirma($nome, $numero, $nacimento, $endereco);
+MensagemConfirma($nome, $numero, $nacimento, $rua, $cidade );
 header("Location: index.php");
+
