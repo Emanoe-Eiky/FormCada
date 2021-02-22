@@ -42,7 +42,7 @@ include "Sevicos/MensagemDeErro.php";
              <label>Nascimento:</label>
              </td>
              <td aling="left">
-             <input type="date" name="nacimento" id="">
+             <input type="date" name="nacimento" id="" max="2000-01-01">
              <!-- <input type="text" name="dia" size="2" maxlength="2" value="dd">
              <input type="text" name="mes" size="2" maxlength="2" value="mm">
              <input type="text" name="ano" size="4" maxlength="4" value="aaaa"> -->

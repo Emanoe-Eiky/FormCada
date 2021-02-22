@@ -73,6 +73,15 @@ function validaCidade (string $cidade)
 
 function validaBairro (string $bairro)
 {
-    if (validaCidade ($bairro))
-    return;
+    if (empty($bairro)){
+        setarMensagemErro('Onome da bairro não pode ser vazio');
+        return false;
+    }else if (strlen($bairro) < 3){
+        setarMensagemErro('O nome deve comter mais que 3 caractere! por favor tente novamente');
+        return false;
+    }else if (is_numeric($bairro)){
+        setarMensagemErro('O nome da bairro não pode ser umm numero');
+        return false;
+    }
+    return true;
 }

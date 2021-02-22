@@ -27,3 +27,16 @@ function obterMensagemSucesso(): ?string
     }
     return null;
 }
+
+function removerMensagemErro () : void {
+    if(isset($_SESSION['Mensagem-de-erro'])){
+         unset($_SESSION['Mensagem-de-erro']);}
+    }
+
+function removerMensagemSucesso () : void
+{
+    if (isset($_SESSION['Mensagem-de-sucesso']))
+    {
+        unset($_SESSION['Mensagem-de-sucesso']);
+    }
+}
