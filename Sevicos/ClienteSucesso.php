@@ -1,6 +1,6 @@
 <?php
 function MensagemConfirma (
-    string $nome, string $numero, string $nacimento, string $rua, string $cidade, string $bairro ) : ?string
+    string $nome, string $numero, string $nacimento, string $rua, string $cidade, string $bairro, ) : ?string
     
 {
     if (validaNome($nome) && validaNumero($numero) && validaNascimento($nacimento) && validaRua($rua) &&  
