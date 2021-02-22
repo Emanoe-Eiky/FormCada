@@ -1,13 +1,13 @@
 <?php
-function  validaNome(string $Nome): bool
+function  validaNome(string $nome): bool
 {
-    if (empty($Nome)) {
+    if (empty($nome)) {
         setarMensagemErro('O nome não pode ser vazio');
         return false;
-    } else if (strlen($Nome) < 6) {
+    } else if (strlen($nome) < 6) {
         setarMensagemErro('O nome deve conter mais que 3 caractere! Por favor coloque seu nome completo.');
         return false;
-    } else if (is_numeric($Nome)) {
+    } else if (is_numeric($nome)) {
         setarMensagemErro('Seu nome não pode ser um numero.');
         return false;
     }
@@ -15,33 +15,35 @@ function  validaNome(string $Nome): bool
 }
 
 
-function ValidaNumero(string $Numero): bool
+function validaNumero(string $numero) : bool
 {
-    if (!is_numeric($Numero)) {
+    if (!is_numeric($numero)) {
         setarMensagemErro("Digete um numero valido para o numero da casa");
         return false;
     }
     return true;
 }
 
-function ValidaNascimento(string $Nacimento): bool
+
+function validaNascimento(string $nacimento): bool
 {
-    if (empty($Nacimento)) {
+    if (empty($nacimento)) {
         setarMensagemErro('Você esqueceu de preenche sua idade.');
         return false;
     }
     return true;
 }
 
-function ValidaRua(string $Rua): bool
+
+function validaRua (string $rua) : bool
 {
-    if (empty($Rua)) {
+    if (empty($rua)) {
         setarMensagemErro('O nome da sua Rua não pode ser vazio');
         return false;
-    } else if (strlen($Rua) < 3) {
+    } else if (strlen($rua) < 3) {
         setarMensagemErro('O nome da sua Rua deve conter mais que 3 caractere! Por favor tente .');
         return false;
-    } else if (is_numeric($Rua)) {
+    } else if (is_numeric($rua)) {
         setarMensagemErro('A Rua não pode ser um numero.');
         return false;
     }
@@ -49,31 +51,28 @@ function ValidaRua(string $Rua): bool
     return true;
 }
 
-function ValidaBairro(string $Bairro) : bool
+
+
+
+
+function validaCidade (string $cidade)
 {
-    if (empty ($Bairro)) {
-        setarMensagemErro('O bairro não pode ser vazio');
+    if (empty($cidade)){
+        setarMensagemErro('Onome da cidade não pode ser vazio');
         return false;
-    } else if (strlen ($Bairro) < 3) {
-        setarMensagemErro('O nome do bairro de conter mais que 3 caractere!');
+    }else if (strlen($cidade) < 3){
+        setarMensagemErro('O nome deve comter mais que 3 caractere! por favor tente novamente');
         return false;
-    }else if (is_numeric($Bairro)){
-        setarMensagemErro('O bairro não pode ser um numero');
+    }else if (is_numeric($cidade)){
+        setarMensagemErro('O nome da cidade não pode ser umm numero');
         return false;
     }
     return true;
 }
 
-function ValidaCidade (string $Cidade) : bool {
-    if (empty ($Cidade)){
-        setarMensagemErro('A cidade não pode ser vazio');
-        return false;
-    }else if (strlen($Cidade) < 3){
-        setarMensagemErro('O nome da cidade deve conter masi de 3 caracter');
-        return false;
-    }else if (is_numeric ($Cidade)){
-        setarMensagemErro('A cidade não pode ser um numero');
-        return false;
-    }
-    return true;
+
+function validaBairro (string $bairro)
+{
+    if (validaCidade ($bairro))
+    return;
 }

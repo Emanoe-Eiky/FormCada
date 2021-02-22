@@ -26,52 +26,52 @@ include "Sevicos/MensagemDeErro.php";
         ?>
         <!-- Dados pessoas -->
         <fieldset>
-            <legend> Dados Pessoas </legend>
-            <table cellspacing="10">
-                <tr>
-                    <td>
-                        <label for="nome">Nome:</label>
-                    </td>
-                    <td align="left">
-                        <input type="text" name="nome" size="43" maxlength="40" id="nome">
-                    </td>
-
-                </tr>
-                <tr>
-                    <td>
-                        <label>Nascimento:</label>
-                    </td>
-                    <td aling="left">
-                        <input type="date" name="nacimento" id="">
-                        <!-- <input type="text" name="dia" size="2" maxlength="2" value="dd">
+         <legend> Dados Pessoas </legend>
+         <table cellspacing="10">
+         <tr>
+             <td>
+              <label for="nome">Nome:</label> 
+             </td>
+             <td align="left">
+               <input type="text" name="nome" size="38" maxlength="40" id="nome">
+             </td>
+            
+         </tr>
+         <tr>
+             <td>
+             <label>Nascimento:</label>
+             </td>
+             <td aling="left">
+             <input type="date" name="nacimento" id="">
+             <!-- <input type="text" name="dia" size="2" maxlength="2" value="dd">
              <input type="text" name="mes" size="2" maxlength="2" value="mm">
              <input type="text" name="ano" size="4" maxlength="4" value="aaaa"> -->
-                    </td>
-                    <td>
-                        <label for="email">E-mail:</label>
-                    </td>
-                    <td aling="left">
-                        <input type="email" name="email">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="rg">GR:</label>
-                    </td>
-                    <td align="left">
-                        <input type="text" name="rg" size="13" maxlength="13">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>CPF:</label>
-                    </td>
-                    <td align="lefit">
-                        <input type="text" name="cpf" size="9" maxlength="14">
-                    </td>
-                </tr>
-            </table>
-        </fieldset> <br />
+             </td>
+             <td>
+             <label for="email">E-mail:</label>
+             </td>
+             <td aling="left">
+               <input type="email" name="email">
+             </td>
+         </tr>
+         <tr> 
+          <td>
+          <label for="rg">GR:</label>
+          </td>
+          <td align="left">
+          <input type="text" name="rg" \ pattern="\d{3}\.\d{3}\.\d{3}" \ title="O RG deve seguir essa ordem: XXX.XXX.XXX">
+          </td>
+         </tr>
+         <tr>
+             <td>
+                 <label>CPF:</label>
+             </td>
+                <td align="lefit">
+                <input type="text" name="cpf" \ pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" \ title="Digite o CPF dessa Formar: XXX.XXX.XXX-XX"> 
+             </td>
+         </tr>
+         </table>
+        </fieldset> <br/>
         <!-- ENDEREÇO -->
         <fieldset>
             <legend>Endereço</legend>
@@ -111,7 +111,7 @@ include "Sevicos/MensagemDeErro.php";
                         <label for="cep">CEP:</label>
                     </td>
                     <td>
-                        <input type="text" name="cep" size="8" maxlength="8"> <!-- <input type="text" name="cep2" size="3" maxlength="3">-->
+                        <input type="text" name="cep" \ pattern="\d{5}-\d{3}" title="Digite assim o seu CEP: XXXXX-XXX"> <!-- <input type="text" name="cep2" size="3" maxlength="3">-->
                     </td>
                 </tr>
             </table>
