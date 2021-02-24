@@ -7,7 +7,8 @@ function  validaNome(string $nome): bool
     } else if (strlen($nome) < 6) {
         setarMensagemErro('O nome deve conter mais que 3 caractere! Por favor coloque seu nome completo.');
         return false;
-    } else if (is_numeric($nome)) {
+    } else if (is_numeric($nome)) 
+    {
         setarMensagemErro('Seu nome não pode ser um numero.');
         return false;
     }

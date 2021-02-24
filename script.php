@@ -3,6 +3,8 @@ include "Sevicos/Validacao.php";
 include "Sevicos/MensagemDeErro.php";
 include "Sevicos/ClienteSucesso.php";
 
+// $dadosClientes = array
+// (
 $nome = $_POST['nome'];
 $nacimento = $_POST['nacimento'];
 $email = $_POST['email'];
@@ -13,10 +15,10 @@ $numero = $_POST['numero'];
 $bairro = $_POST['bairro'];
 $cidade = $_POST['cidade'];
 $cep = $_POST['cep'];
-
+// );
 // para saber oq está sendo enviado pelo post
 // var_dump($_POST); 
 
- MensagemConfirma ($nome, $numero, $nacimento, $rua, $cidade, $bairro );
+MensagemConfirma ($nome, $numero, $nacimento, $rua, $cidade, $bairro );
 header("Location: index.php");
 

@@ -9,29 +9,33 @@ include "Sevicos/MensagemDeErro.php";
     <meta name="author" content="">
     <meta name="description" content="">
     <meta name="viewport" content="Width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="estilo/styleForm.css">
     <title>Formulario cadastro de clientes</title>
 </head>
 
 <body>
+<div class="formulario">
     <form action="script.php" method="post">
-        <?php
-        $MensagemErro = obterMensagemErro();
-        if (!empty($MensagemErro)) {
-            echo $MensagemErro;
-        }
-        $MensagemSucesso = obterMensagemSucesso();
-        if (!empty($MensagemSucesso)) {
-            echo $MensagemSucesso;
-        }
-        ?>
+        <div class="mensagemTela">
+            <?php
+            $MensagemErro = obterMensagemErro();
+            if (!empty($MensagemErro)) {
+                echo $MensagemErro;
+            }
+            $MensagemSucesso = obterMensagemSucesso();
+            if (!empty($MensagemSucesso)) {
+                echo $MensagemSucesso;
+            }
+            ?>
+        </div> </br>
         <!-- Dados pessoas -->
-        <fieldset>
-         <legend> Dados Pessoas </legend>
+        <fieldset class="formDadosPessoa">
+         <legend > Dados Pessoas </legend>
          <table cellspacing="10">
          <tr>
              <td>
-              <label for="nome">Nome:</label> 
-             </td>
+              <label for="nome" class="daodsCliesnte">Nome *:</label> 
+             </td> 
              <td align="left">
                <input type="text" name="nome" size="38" maxlength="40" id="nome">
              </td>
@@ -39,7 +43,7 @@ include "Sevicos/MensagemDeErro.php";
          </tr>
          <tr>
              <td>
-             <label>Nascimento:</label>
+             <label class="daodsCliesnte">Nascimento *:</label>
              </td>
              <td aling="left">
              <input type="date" name="nacimento" id="" max="2000-01-01">
@@ -48,7 +52,7 @@ include "Sevicos/MensagemDeErro.php";
              <input type="text" name="ano" size="4" maxlength="4" value="aaaa"> -->
              </td>
              <td>
-             <label for="email">E-mail:</label>
+             <label for="email" class="daodsCliesnte">E-mail:</label>
              </td>
              <td aling="left">
                <input type="email" name="email">
@@ -56,15 +60,21 @@ include "Sevicos/MensagemDeErro.php";
          </tr>
          <tr> 
           <td>
-          <label for="rg">GR:</label>
+          <label for="rg" class="daodsCliesnte">GR *:</label>
           </td>
           <td align="left">
-          <input type="text" name="rg" \ pattern="\d{3}\.\d{3}\.\d{3}" \ title="O RG deve seguir essa ordem: XXX.XXX.XXX">
+          <input type="text" name="rg" \ pattern="\d{3}\.\d{3}\.\d{3}" \ title="O RG deve seguir essa ordem: XXX.XXX.XXX" >
           </td>
+          <td>
+          <table for="tel" class="daodsCliesnte">Telefone *:</table>
+          </td>
+          <td align="left">
+            <input type="text" name="tel" id="" \ pattern="^\([1-9]{2}\) (?:[2-8]|9[1-9])[0-9]{3}\-[0-9]{4}$" title="Digite seu numero de telefone assim: (XX)XXXXX-XXXX">
+         </td>
          </tr>
          <tr>
              <td>
-                 <label>CPF:</label>
+                 <label class="daodsCliesnte">CPF *:</label>
              </td>
                 <td align="lefit">
                 <input type="text" name="cpf" \ pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" \ title="Digite o CPF dessa Formar: XXX.XXX.XXX-XX"> 
@@ -74,17 +84,17 @@ include "Sevicos/MensagemDeErro.php";
         </fieldset> <br/>
         <!-- ENDEREÇO -->
         <fieldset>
-            <legend>Endereço</legend>
+            <legend >Endereço</legend>
             <table cellspacing="10">
                 <tr>
                     <td>
-                        <table for="rua">Rua</table>
+                        <table for="rua" class="daodsCliesnte">Rua *:</table>
                     </td>
                     <td aling="left">
                         <input type="text" name="rua" size="9" id="">
                     </td>
                     <td>
-                        <table for="numero">Numero:</table>
+                        <table for="numero" class="daodsCliesnte">Numero *:</table>
                     </td>
                     <td aling="left">
                         <input type="text" name="numero" size="4" id="" maxlength="5">
@@ -92,7 +102,7 @@ include "Sevicos/MensagemDeErro.php";
                 </tr>
                 <tr>
                     <td>
-                        <label for="bairro">Bairro:</label>
+                        <label for="bairro" class="daodsCliesnte">Bairro *:</label>
                     </td>
                     <td aling="left">
                         <input type="text" name="bairro" id="">
@@ -100,7 +110,7 @@ include "Sevicos/MensagemDeErro.php";
                 </tr>
                 <tr>
                     <td>
-                        <label for="cidade">Cidade:</label>
+                        <label for="cidade" class="daodsCliesnte">Cidade *:</label>
                     </td>
                     <td aling="left">
                         <input type="text" name="cidade" id="">
@@ -108,7 +118,7 @@ include "Sevicos/MensagemDeErro.php";
                 </tr>
                 <tr>
                     <td>
-                        <label for="cep">CEP:</label>
+                        <label for="cep" class="daodsCliesnte">CEP *:</label>
                     </td>
                     <td>
                         <input type="text" name="cep" \ pattern="\d{5}-\d{3}" title="Digite assim o seu CEP: XXXXX-XXX"> <!-- <input type="text" name="cep2" size="3" maxlength="3">-->
@@ -116,11 +126,12 @@ include "Sevicos/MensagemDeErro.php";
                 </tr>
             </table>
         </fieldset><br />
-        <input type="submit" value="Enviar">
-        <input type="reset" value="Limpar">
+        <input type="submit"  value="Enviar" class="bataoEnv">
+        <input type="reset" value="Limpar" class="bataoEnv">
 
 
     </form>
+</div>    
 </body>
 
 </html>

@@ -29,8 +29,10 @@ function obterMensagemSucesso(): ?string
 }
 
 function removerMensagemErro () : void {
-    if(isset($_SESSION['Mensagem-de-erro'])){
-         unset($_SESSION['Mensagem-de-erro']);}
+    if(isset($_SESSION['Mensagem-de-erro']))
+        {
+         unset($_SESSION['Mensagem-de-erro']);
+        }
     }
 
 function removerMensagemSucesso () : void
