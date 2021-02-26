@@ -5,7 +5,7 @@ function  validaNome(string $nome): bool
         setarMensagemErro('O nome não pode ser vazio');
         return false;
     } else if (strlen($nome) < 6) {
-        setarMensagemErro('O nome deve conter mais que 3 caractere! Por favor coloque seu nome completo.');
+        setarMensagemErro('O nome deve conter mais que 3 caractere!');
         return false;
     } else if (is_numeric($nome)) 
     {
@@ -42,7 +42,7 @@ function validaRua (string $rua) : bool
         setarMensagemErro('O nome da sua Rua não pode ser vazio');
         return false;
     } else if (strlen($rua) < 3) {
-        setarMensagemErro('O nome da sua Rua deve conter mais que 3 caractere! Por favor tente .');
+        setarMensagemErro('O nome da sua Rua deve conter mais que 3 caractere!.');
         return false;
     } else if (is_numeric($rua)) {
         setarMensagemErro('A Rua não pode ser um numero.');
@@ -62,7 +62,7 @@ function validaCidade (string $cidade)
         setarMensagemErro('Onome da cidade não pode ser vazio');
         return false;
     }else if (strlen($cidade) < 3){
-        setarMensagemErro('O nome deve comter mais que 3 caractere! por favor tente novamente');
+        setarMensagemErro('O nome da cidade comter mais que 3 caractere! por favor tente novamente');
         return false;
     }else if (is_numeric($cidade)){
         setarMensagemErro('O nome da cidade não pode ser umm numero');
@@ -72,16 +72,28 @@ function validaCidade (string $cidade)
 }
 
 
-function validaBairro (string $bairro)
+function validaBairro($bairro)
 {
+    echo $bairro;
+    exit;
+ 
     if (empty($bairro)){
         setarMensagemErro('Onome da bairro não pode ser vazio');
         return false;
     }else if (strlen($bairro) < 3){
-        setarMensagemErro('O nome deve comter mais que 3 caractere! por favor tente novamente');
+        setarMensagemErro('O nome bairro comter mais que 3 caractere! por favor tente novamente');
         return false;
     }else if (is_numeric($bairro)){
         setarMensagemErro('O nome da bairro não pode ser umm numero');
+        return false;
+    }
+    return true;
+}
+ 
+
+function naoVazio (string $vazio) : bool{
+    if(empty($vazio)){
+        setarMensagemErro('Preencha todos os campos do  fomulário');
         return false;
     }
     return true;

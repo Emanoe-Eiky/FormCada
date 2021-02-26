@@ -37,7 +37,7 @@ include "Sevicos/MensagemDeErro.php";
               <label for="nome" class="daodsCliesnte">Nome *:</label> 
              </td> 
              <td align="left">
-               <input type="text" name="nome" size="38" maxlength="40" id="nome">
+               <input type="text" name="nome" size="38" maxlength="40" id="nome" value="digite" >  
              </td>
             
          </tr>
@@ -52,7 +52,7 @@ include "Sevicos/MensagemDeErro.php";
              <input type="text" name="ano" size="4" maxlength="4" value="aaaa"> -->
              </td>
              <td>
-             <label for="email" class="daodsCliesnte">E-mail:</label>
+             <label for="email" class="daodsCliesnte">E-mail *:</label>
              </td>
              <td aling="left">
                <input type="email" name="email">

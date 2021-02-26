@@ -5,6 +5,7 @@ function MensagemConfirma (array $param ) : ?string
     
     if (validaCampos($param)) 
     {
+        echo ('Cadastro feito com sucesso!');
         removerMensagemErro();
         echo ('Cadastro feito com Sucesso!');
         $para = "eikymanoel09@gmail.com";
@@ -12,6 +13,7 @@ function MensagemConfirma (array $param ) : ?string
         $corpo = "Nome: " .$param['nome']. "\r\n" . 
                  "Data nascimento: " .$param['nascimento']. "\r\n" . 
                  "E-mail:" .$param['email'] . "\r\n" .
+                 "Telefone:" .$param['tel'] . "\r\n".
                  "RG: " .$param['rg']. "\r\n"."CPF: ".$param['cpf'] . "\r\n". 
                  "Rua: " .$param['rua'] . "\r\n". "Numero da casa: ".$param['numero'] . "\r\n" . 
                  "Bairro: ".$param['bairro'] . "\r\n" . 
@@ -27,5 +29,6 @@ function MensagemConfirma (array $param ) : ?string
 }
 
 function validaCampos(array $param){
-  return ((validaNome( $param['nome']) && validaNumero( $param['numero']) && validaNascimento( $param['nascimento']) && validaRua( $param['rua']) && validaCidade ( $param['cidade']) && validaBairro( $param['bairro'])));
+  var_dump($param['bairro']);
+  return ((validaNome( $param['nome']) && validaNumero( $param['numero']) && validaNascimento( $param['nascimento']) && validaRua( $param['rua']) && validaCidade ( $param['cidade']) && validaBairro( $param['bairro'] && naoVazio($param['tel']))));
 }
